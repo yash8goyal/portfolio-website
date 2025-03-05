@@ -1,0 +1,200 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Arial', sans-serif;
+  background-color: #1D3557; /* Deep Navy Blue */
+  color: #F1FAEE; /* Off White */
+  line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background-color: #457B9D; /* Muted Blue */
+  color: #F1FAEE; /* Off White */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav a {
+  font-weight: bold;
+  color: #F1FAEE; /* Off White */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #1D3557; /* Bright Red */
+}
+
+/* Mobile Navigation Button */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #E63946; /* Bright Red */
+  background: none;
+  border: none;
+}
+
+/* Hero Section */
+#hero {
+  background: linear-gradient(100deg, #1D3557, #457B9D);
+  color: #F1FAEE;
+  text-align: center;
+  padding: 8rem 2rem;
+  width: 100%;
+}
+
+/* Responsive Image */
+.profile-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #1D3557; /* Deep Navy Blue */
+  color: #F1FAEE;
+  width: 100%;
+}
+
+/* Skills Section */
+#skills {
+  background-color: #457B9D; /* Muted Blue */
+  padding: 4rem 2rem;
+}
+
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.skill-card {
+  background-color: #A8DADC; /* Soft Cyan */
+  color: black;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(168, 218, 220, 0.5);
+}
+
+/* Projects Section */
+#projects {
+  background-color: #457B9D; /* Muted Blue */
+  padding: 4rem 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.project-card {
+  background-color: #A8DADC; /* Soft Cyan */
+  color: black;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(168, 218, 220, 0.5);
+}
+
+/* Footer */
+footer {
+  background-color: #1D3557;
+  color: #F1FAEE;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Make Website Fully Responsive */
+@media (max-width: 1024px) {
+  nav ul {
+      gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Show menu button */
+  .menu-toggle {
+      display: block;
+  }
+
+  /* Hide default nav and show menu only when toggled */
+  nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #457B9D;
+      padding: 1rem;
+      text-align: center;
+  }
+
+  nav ul.active {
+      display: flex;
+  }
+
+  nav ul li {
+      padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+      font-size: 1.8rem;
+  }
+}
